@@ -1,0 +1,16 @@
+.card {
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.flex_box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.color {
+    display: flex;
+    justify-content: space-between;
+}
