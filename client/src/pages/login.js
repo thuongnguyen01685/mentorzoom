@@ -50,22 +50,27 @@ const Login = () => {
         </h3> */}
         {/* <h5 className=" text-center mb-4 text-warning">MentorZoom</h5> */}
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1" className="text-light">
-            Email
+          <label
+            htmlFor="exampleInputEmail1"
+            className="text-light font-weight-bold">
+            Email*
           </label>
           <input
             type="email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            placeholder="Nhập email"
             onChange={handleChangeInput}
             name="email"
             value={email}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1" className="text-light">
-            Mật khẩu
+          <label
+            htmlFor="exampleInputPassword1"
+            className="text-light font-weight-bold">
+            Mật khẩu*
           </label>
           <div className="pass">
             <input
@@ -73,28 +78,31 @@ const Login = () => {
               className="form-control"
               id="exampleInputPassword1"
               onChange={handleChangeInput}
+              placeholder="Nhập mật khẩu"
               name="password"
               value={password}
               autoComplete="off"
             />
             <small onClick={() => setTypePass(!typePass)}>
               {typePass ? (
-                <span className="material-icons">visibility_off</span>
+                <span className="material-icons text-light">
+                  visibility_off
+                </span>
               ) : (
-                <span className="material-icons">visibility</span>
+                <span className="material-icons text-light">visibility</span>
               )}
             </small>
           </div>
         </div>
         <button
           type="submit"
-          className="btn btn-primary  w-100"
+          className="btn w-100 font-weight-bold"
           disabled={email && password ? false : true}>
           Đăng nhập
         </button>
-        <p className="my-2 text-light">
+        <p className="my-2 text-light font-weight-bold">
           Bạn chưa có tài khoản?{" "}
-          <Link to="/register" style={{ color: "yellow" }}>
+          <Link to="/register" style={{ color: "yellow", fontWeight: "bold" }}>
             Đăng kí ngay
           </Link>
         </p>

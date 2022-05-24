@@ -86,7 +86,7 @@ const Groups = () => {
               <text className="text-white ">{item.ten_zoom}</text>
               <div className="nav-item dropdown">
                 <span
-                  className="material-icons"
+                  className="material-icons text-light"
                   id="moreLink"
                   data-toggle="dropdown"
                   style={{ cursor: "pointer" }}>
@@ -113,7 +113,7 @@ const Groups = () => {
 
             <div className="card-body text-center">
               <label htmlFor="exampleFormControlInput1" className="form-label">
-                Mã phòng: {item.ma_zoom}
+                Mã nhóm: {item.ma_zoom}
               </label>
               <br />
               <Link to="/home">
@@ -121,7 +121,7 @@ const Groups = () => {
                   type="button"
                   className="btn btn-primary mt-2"
                   onClick={() => handleInZoom(item._id)}>
-                  Vào phòng
+                  Vào nhóm
                 </button>
               </Link>
             </div>

@@ -10,7 +10,7 @@
 
 .auth_page form {
     background: #3b0414;
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
     border: 1px solid #ddd;
     padding: 30px 25px;
@@ -19,6 +19,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
+}
+
+.btn {
+    color: #fff;
+    background-color: #3b0414 !important;
+    border-color: #FFB21E !important;
+}
+
+
+/* #exampleInputEmail1 {
+    background-color: #3b0414;
+    color: #ddd;
+} */
+
+.form-control {
+    border: 1px solid #FFB21E !important;
+    background-color: #3b0414 !important;
+    color: #ddd !important;
 }
 
 .auth_page form .pass {
@@ -32,4 +50,21 @@
     transform: translateY(-50%);
     cursor: pointer;
     opacity: 0.5;
+}
+
+.form-control::placeholder {
+    /* chạy tốt trên Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #888 !important;
+    opacity: 1;
+    /* Firefox */
+}
+
+.form-control:-ms-input-placeholder {
+    /* chạy trên Internet Explorer 10-11 */
+    color: #888 !important;
+}
+
+.form-control::-ms-input-placeholder {
+    /* chạy trên Microsoft Edge */
+    color: #888 !important;
 }

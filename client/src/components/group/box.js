@@ -30,8 +30,8 @@ const Box = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (statusZoom) {
-      await dispatch(editGroup(Groups.deGroup.id, { nameGroup, maZoom }));
-      dispatch(getGroups(token));
+      // await dispatch(editGroup(Groups.deGroup.id, { nameGroup, maZoom }));
+      // dispatch(getGroups(token));
       dispatch({ type: GLOBALTYPES.STATUSZOOM, payload: false });
     } else {
       await dispatch(addGroup({ auth, nameGroup, maZoom, userFostech, token }));
@@ -78,7 +78,7 @@ const Box = () => {
         <input
           className="form-control mt-1"
           type="text"
-          placeholder="Mã phòng"
+          placeholder="Mã nhóm"
           value={maZoom}
           onChange={(e) => setMaZoom(e.target.value)}
         />
@@ -96,7 +96,7 @@ const Box = () => {
             onClick={handleSubmit}
             type="button"
             className="btn btn-primary mt-2">
-            {statusZoom ? "Sửa thông tin" : "Thêm nhóm"}
+            {statusZoom ? "Sửa thông tin" : "Thêm"}
           </button>
           {statusZoom && (
             <button

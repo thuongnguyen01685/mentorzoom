@@ -14,3 +14,16 @@
     display: flex;
     justify-content: space-between;
 }
+
+.css-1s2u09g-control {
+    background-color: #3b0414 !important;
+    border: 1px solid #FFB21E;
+}
+
+.css-6j8wv5-Input {
+    background-color: #3b0414;
+}
+
+.select__control {
+    border: 1px solid #FFB21E;
+}

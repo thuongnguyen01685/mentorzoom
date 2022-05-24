@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { loginFostech, register } from "../redux/actions/authAction";
+import logo from "../../src/images/mentorzoom.png";
 
 const Register = () => {
   const { auth, alert } = useSelector((state) => state);
@@ -50,13 +51,27 @@ const Register = () => {
   return (
     <div className="auth_page">
       <form onSubmit={handleSubmit} method="POST">
-        <h3
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <img
+            className="text-uppercase text-center mb-0"
+            src={logo}
+            alt={logo}
+            style={{ width: "40%", height: "40%" }}
+          />
+        </div>
+        <h6
           className="text-uppercase text-center mb-4"
-          style={{ color: "cornflowerblue" }}>
-          Đăng kí với tài khoản mật khẩu fostech
-        </h3>
+          style={{ color: "#ffffff", marginTop: "10px" }}>
+          Đăng kí tài khoản
+        </h6>
+
         <div className="form-group">
-          <label htmlFor="fullname">Họ và tên</label>
+          <label
+            htmlFor="fullname"
+            className="text-light
+font-weight-bold">
+            Họ và tên*
+          </label>
           <input
             type="text"
             className="form-control"
@@ -88,7 +103,12 @@ const Register = () => {
         </div>  */}
 
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email</label>
+          <label
+            htmlFor="exampleInputEmail1"
+            className="text-light
+font-weight-bold">
+            Email*
+          </label>
           <input
             type="email"
             className="form-control"
@@ -103,7 +123,11 @@ const Register = () => {
           </small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Mật khẩu</label>
+          <label
+            htmlFor="exampleInputPassword1"
+            className="text-light font-weight-bold">
+            Mật khẩu*
+          </label>
           <div className="pass">
             <input
               type={typePass ? "text" : "password"}
@@ -116,9 +140,11 @@ const Register = () => {
             />
             <small onClick={() => setTypePass(!typePass)}>
               {typePass ? (
-                <span className="material-icons">visibility_off</span>
+                <span className="material-icons text-light">
+                  visibility_off
+                </span>
               ) : (
-                <span className="material-icons">visibility</span>
+                <span className="material-icons text-light">visibility</span>
               )}
             </small>
           </div>
@@ -186,14 +212,14 @@ const Register = () => {
         </div> */}
         <button
           type="submit"
-          className="btn btn-primary  w-100"
+          className="btn w-100 text-light font-weight-bold"
           // disabled={email && password ? false : true}
         >
           Đăng kí
         </button>
-        <p className="my-2">
-          Đã có tài khoản?
-          <Link to="/" style={{ color: "yellow" }}>
+        <p className="my-2 text-light font-weight-bold">
+          Đã có tài khoản?{""}
+          <Link to="/" style={{ color: "yellow", fontWeight: "bold" }}>
             Đăng nhập
           </Link>
         </p>
