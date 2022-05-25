@@ -17,7 +17,6 @@ const postSchema = new mongoose.Schema(
     maZoom: {
       type: String,
       trim: true,
-      unique: true,
       required: true,
     },
   },

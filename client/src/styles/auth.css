@@ -68,3 +68,42 @@
     /* chạy trên Microsoft Edge */
     color: #888 !important;
 }
+
+
+/*Form Register*/
+
+.auth_pageRE {
+    width: 100%;
+    min-height: 100vh;
+    background: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+
+.auth_pageRE form .pass {
+    position: relative;
+}
+
+.auth_pageRE form .pass small {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.auth_pageRE form {
+    background: #3b0414;
+    max-width: 500px !important;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 30px 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}

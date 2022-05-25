@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 const PostThumb = ({ posts, result }) => {
   const { theme } = useSelector((state) => state);
+
+  // console.log(posts.map((post) => post)
+
   if (result === 0) return <h2 className="text-center">Không có bài viết.</h2>;
 
   return (

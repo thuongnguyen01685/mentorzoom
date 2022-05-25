@@ -9,12 +9,7 @@ const groupSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    ArrayUser: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "user",
-      },
-    ],
+    ArrayUser: [],
     user: { type: mongoose.Types.ObjectId, ref: "user" },
     maZoom: {
       type: String,
@@ -22,6 +17,8 @@ const groupSchema = new mongoose.Schema(
       unique: true,
       required: true,
     },
+    posts: [{ type: mongoose.Types.ObjectId, ref: "post" }],
+    comments: [{ type: mongoose.Types.ObjectId, ref: "comment" }],
   },
   {
     timestamps: true,

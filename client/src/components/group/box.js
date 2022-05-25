@@ -19,14 +19,13 @@ const Box = () => {
   const dispatch = useDispatch();
 
   const userOption = ListUserF.userFostech.map((opt) => ({
-    label: opt.email,
-    value: opt.email,
+    label: opt,
+    value: opt,
   }));
 
-  //console.log(userOption);
+  // console.log(userOption);
   const userFostech = arrayUser.map((item) => item.value);
 
-  const token = localStorage.getItem("@token_key");
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (statusZoom) {
@@ -34,11 +33,11 @@ const Box = () => {
       // dispatch(getGroups(token));
       dispatch({ type: GLOBALTYPES.STATUSZOOM, payload: false });
     } else {
-      await dispatch(addGroup({ auth, nameGroup, maZoom, userFostech, token }));
+      await dispatch(addGroup({ auth, nameGroup, maZoom, userFostech }));
       setNameGroup("");
       setMaZoom("");
       setArrayUser([]);
-      dispatch(getGroups(token));
+      dispatch(getGroups(auth.token));
     }
   };
   const handleCancel = () => {
@@ -60,7 +59,7 @@ const Box = () => {
       className="card d-flex"
       style={{ width: "18rem", justifyContent: "center" }}>
       <div className="color mt-0 p-3 bg-info text-light">
-        {statusZoom ? "Chỉnh sửa" : "Tạo phòng"}
+        {statusZoom ? "Chỉnh sửa" : "Tạo nhóm"}
       </div>
 
       <div className="card-body">

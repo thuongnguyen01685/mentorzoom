@@ -1,4 +1,6 @@
 const Groups = require("../models/groupModel");
+const Comments = require("../models/commentModel");
+const Posts = require("../models/postModel");
 
 const ctrlGroup = {
   createGroup: async (req, res) => {
@@ -40,7 +42,7 @@ const ctrlGroup = {
   },
   updateGroup: async (req, res) => {
     try {
-      const { nameGroup, ArrayUser } = req.body;
+      const { nameGroup, maZoom, ArrayUser } = req.body;
 
       const group = await Groups.findOneAndUpdate(
         {
@@ -64,6 +66,26 @@ const ctrlGroup = {
       });
     } catch (error) {
       return res.status(500).json({ msg: error.message });
+    }
+  },
+  deleteGroup: async (req, res) => {
+    try {
+      const group = await Groups.findOneAndDelete({
+        _id: req.params.id,
+        user: req.user._id,
+      });
+      await Posts.deleteMany({ _id: { $in: group.posts } });
+      await Comments.deleteMany({ _id: { $in: group.comments } });
+
+      res.json({
+        msg: "Deleted Groups!",
+        newGroup: {
+          ...group,
+          user: req.user,
+        },
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
     }
   },
 };

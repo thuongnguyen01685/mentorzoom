@@ -22,7 +22,7 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login(userData));
   };
   useEffect(() => {
     if (auth.token) history.push("/");

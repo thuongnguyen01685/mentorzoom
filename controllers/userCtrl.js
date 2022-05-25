@@ -24,6 +24,14 @@ const userCtrl = {
       return res.status(500).json({ msg: error.message });
     }
   },
+  getUsers: async (req, res) => {
+    try {
+      const users = await Users.find();
+      res.json({ users });
+    } catch (error) {
+      return res.status(500).json({ msg: error.message });
+    }
+  },
   updateUser: async (req, res) => {
     try {
       const { avatar, fullname, mobile, address, story, website, gender } =

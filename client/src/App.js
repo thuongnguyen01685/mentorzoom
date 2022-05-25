@@ -27,7 +27,7 @@ function App() {
   const { auth, status, modal, call, authFotech } = useSelector(
     (state) => state
   );
-  const token = localStorage.getItem("@token_key");
+  // const token = localStorage.getItem("@token_key");
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,10 +41,10 @@ function App() {
       dispatch(getPosts(auth.token));
       dispatch(getSuggestions(auth.token));
       dispatch(getNotifies(auth.token));
-      dispatch(getGroups(token));
-      dispatch(getUserFostech(token));
+      dispatch(getGroups(auth.token));
+      dispatch(getUserFostech(auth));
     }
-  }, [dispatch, auth.token, token]);
+  }, [dispatch, auth.token]);
 
   useEffect(() => {
     if (auth.token) dispatch(getBlogs());

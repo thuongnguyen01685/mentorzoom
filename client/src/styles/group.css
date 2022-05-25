@@ -27,3 +27,7 @@
 .select__control {
     border: 1px solid #FFB21E;
 }
+
+.card-body {
+    border: 3px solid #3b0414;
+}

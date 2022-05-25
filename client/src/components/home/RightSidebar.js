@@ -12,15 +12,19 @@ const RightSidebar = () => {
 
   const maZoom = localStorage.getItem("@ma_zoom");
 
-  const group = Groups.getGroup.filter((items) => items.ma_zoom === maZoom);
+  //const group = Groups.getGroup.filter((items) => items.maZoom === maZoom);
 
   let temp = [];
 
   suggestions.users.map((item) => {
     let temp2 = Groups.getGroup
-      .filter((items) => items.ma_zoom === maZoom)
-      .map((item) => item.user_zoom);
-    if (temp2 !== undefined) {
+      .filter((items) => items.maZoom === maZoom)
+      .map((item) => item.ArrayUser);
+
+    if (temp2 !== []) {
+      if (!temp2[0]) {
+        temp2[0] = [];
+      }
       if (temp2[0].includes(item.email) == true) {
         temp.push(item);
       } else {

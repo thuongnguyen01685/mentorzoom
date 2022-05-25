@@ -18,7 +18,7 @@
 }
 
 .navbar-light .navbar-brand {
-    color: white;
+    color: #f9f9f9;
 }
 
 
@@ -31,7 +31,7 @@
 
 .header .menu li:hover {
     opacity: 1;
-    box-shadow: 0 2px black;
+    box-shadow: 0 2px white;
 }
 
 .header .menu li.active {
@@ -47,6 +47,20 @@
     position: absolute;
     left: inherit;
     right: 0;
+    background-color: #3b0414;
+    border-radius: 5px;
+    border: 1px solid #FFB21E;
+    color: #ddd !important;
+}
+
+.dropdown-item {
+    color: #ddd !important;
+}
+
+.show {
+    background-color: #3b0414;
+    border-radius: 5px;
+    border: 1px solid #FFB21E;
 }
 
 .header .menu label {

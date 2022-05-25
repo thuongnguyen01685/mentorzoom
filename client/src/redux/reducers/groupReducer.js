@@ -1,3 +1,4 @@
+import { DeleteData } from "../actions/globalTypes";
 import { GROUP_TYPES } from "../actions/groupAction";
 
 const intial = {
@@ -22,6 +23,11 @@ const groupReducer = (state = intial, action) => {
       return {
         ...state,
         deGroup: action.payload,
+      };
+    case GROUP_TYPES.DELETE_GROUP:
+      return {
+        ...state,
+        getGroup: DeleteData(state.getGroup, action.payload._id),
       };
     default:
       return state;
