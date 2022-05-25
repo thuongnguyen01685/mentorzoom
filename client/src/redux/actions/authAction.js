@@ -77,6 +77,7 @@ export const login = (data) => async (dispatch) => {
     dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
     const res = await postDataAPI("login", data);
     localStorage.setItem("firstLogin", true);
+    //const Auth = localStorage.setItem("@auth", JSON.stringify(auth));
 
     dispatch({
       type: GLOBALTYPES.AUTH,
@@ -101,12 +102,11 @@ export const login = (data) => async (dispatch) => {
     });
   }
 };
-
 export const refreshToken = () => async (dispatch) => {
   const firstLogin = localStorage.getItem("firstLogin");
-  const token = localStorage.getItem("@token_key");
   if (firstLogin) {
     dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
+
     try {
       const res = await postDataAPI("refresh_token");
       dispatch({
@@ -116,13 +116,13 @@ export const refreshToken = () => async (dispatch) => {
           user: res.data.user,
         },
       });
-      dispatch({ type: GLOBALTYPES.AUTH_FOSTECH, payload: token });
+
       dispatch({ type: GLOBALTYPES.ALERT, payload: {} });
-    } catch (error) {
+    } catch (err) {
       dispatch({
         type: GLOBALTYPES.ALERT,
         payload: {
-          error: error.response.data.msg,
+          error: err.response.data.msg,
         },
       });
     }
@@ -163,8 +163,6 @@ export const register = (data) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     localStorage.removeItem("firstLogin");
-    // localStorage.removeItem("@token_key");
-    localStorage.removeItem("@ma_zoom");
     await postDataAPI("logout");
     window.location.href = "/";
   } catch (error) {

@@ -38,6 +38,14 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+
+    proxy: {
+      "/api": {
+        target: "https://mentorzoom.thngnguyn44.repl.co",
+        secure: false,
+        changeOrigin: true,
+      },
+    },
   },
   // Chứa các plugins sẽ cài đặt trong tương lai
   plugins: [

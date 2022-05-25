@@ -1,1 +1,1 @@
-export const BASE_URL = "https://zahu.herokuapp.com";
+export const BASE_URL = "http://mentorzoom.aura.vn";

@@ -27,7 +27,6 @@ function App() {
   const { auth, status, modal, call, authFotech } = useSelector(
     (state) => state
   );
-  // const token = localStorage.getItem("@token_key");
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -44,7 +43,7 @@ function App() {
       dispatch(getGroups(auth.token));
       dispatch(getUserFostech(auth));
     }
-  }, [dispatch, auth.token]);
+  }, [dispatch, auth.token, auth]);
 
   useEffect(() => {
     if (auth.token) dispatch(getBlogs());
