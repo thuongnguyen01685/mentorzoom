@@ -1,0 +1,66 @@
+{
+    "name": "client",
+    "proxy": "https://mentorzoom.thngnguyn44.repl.co",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@babel/eslint-parser": "^7.17.0",
+        "@babel/polyfill": "^7.12.1",
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.2",
+        "@testing-library/user-event": "^13.5.0",
+        "axios": "^0.25.0",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "moment": "^2.29.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-redux": "^7.2.6",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "5.0.0",
+        "react-select": "^5.3.2",
+        "react-share": "^4.4.0",
+        "redux": "^4.1.2",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.4.1",
+        "socket.io-client": "^4.4.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --mode development --hot",
+        "build": "webpack --mode development"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.5",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.16.7",
+        "babel-loader": "^8.2.3",
+        "css-loader": "^6.7.1",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.0",
+        "patch-package": "^6.4.7",
+        "peerjs": "^1.4.5",
+        "style-loader": "^3.3.1",
+        "url-loader": "^4.1.1",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+    }
+}
