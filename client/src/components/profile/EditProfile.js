@@ -46,10 +46,8 @@ const EditProfile = ({ setOnEdit }) => {
   };
   return (
     <div className="edit_profile">
-      <button
-        className="btn btn-danger btn_close"
-        onClick={() => setOnEdit(false)}>
-        Close
+      <button className="btn  btn_close" onClick={() => setOnEdit(false)}>
+        Đóng
       </button>
       <form onSubmit={handleSubmit}>
         <div className="info_avatar">
@@ -60,7 +58,7 @@ const EditProfile = ({ setOnEdit }) => {
           />
           <span>
             <i className="fas fa-camera" />
-            <p>Change</p>
+            <p>Thay đổi</p>
             <input
               type="file"
               name="file"
@@ -71,7 +69,9 @@ const EditProfile = ({ setOnEdit }) => {
           </span>
         </div>
         <div className="form_group">
-          <label htmlFor="fullname">Fullname</label>
+          <label htmlFor="fullname" className="text-light">
+            Họ và tên
+          </label>
           <div className="position-relative">
             <input
               type="text"
@@ -91,7 +91,9 @@ const EditProfile = ({ setOnEdit }) => {
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="mobile">MobilePhone</label>
+          <label htmlFor="mobile" className="text-light">
+            Số điện thoại
+          </label>
           <input
             type="text"
             name="mobile"
@@ -101,7 +103,9 @@ const EditProfile = ({ setOnEdit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="address">Địa Chỉ</label>
+          <label htmlFor="address" className="text-light">
+            Địa Chỉ
+          </label>
           <input
             type="text"
             name="address"
@@ -111,7 +115,9 @@ const EditProfile = ({ setOnEdit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="website">Website</label>
+          <label htmlFor="website" className="text-light">
+            Website
+          </label>
           <input
             type="text"
             name="website"
@@ -121,7 +127,9 @@ const EditProfile = ({ setOnEdit }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="story">Story</label>
+          <label htmlFor="story" className="text-light">
+            Story
+          </label>
           <textarea
             cols="30"
             rows="4"
@@ -134,8 +142,8 @@ const EditProfile = ({ setOnEdit }) => {
             {story.length}/200
           </small>
         </div>
-        <label htmlFor="gender">Gender</label>
-        <div className="input-group-prepend px-0 mb-4">
+        {/* <label htmlFor="gender">Gender</label> */}
+        {/* <div className="input-group-prepend px-0 mb-4">
           <select
             name="gender"
             id="gender"
@@ -146,9 +154,9 @@ const EditProfile = ({ setOnEdit }) => {
             <option value="female">Female</option>
             <option value="other">Other</option>
           </select>
-        </div>
-        <button className="btn btn-info w-100" type="submit">
-          Save
+        </div> */}
+        <button className="btn btn-outline w-100" type="submit">
+          Lưu
         </button>
       </form>
     </div>

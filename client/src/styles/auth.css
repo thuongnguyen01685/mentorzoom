@@ -24,7 +24,7 @@
 .btn {
     color: #fff;
     background-color: #3b0414 !important;
-    border-color: #FFB21E !important;
+    border-bottom: 1px solid #FFB21E !important;
 }
 
 
@@ -34,9 +34,14 @@
 } */
 
 .form-control {
-    border: 1px solid #FFB21E !important;
+    border-bottom: 1px solid #FFB21E !important;
     background-color: #3b0414 !important;
     color: #ddd !important;
+    border: none;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
 }
 
 .auth_page form .pass {

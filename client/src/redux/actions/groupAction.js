@@ -45,9 +45,16 @@ export const addGroup =
   };
 export const getGroups = (token) => async (dispatch) => {
   try {
+    dispatch({
+      type: GLOBALTYPES.ALERT,
+      payload: { loading: true },
+    });
     const res = await getDataAPI("groups", token);
-
     dispatch({ type: GROUP_TYPES.GET_GROUP, payload: res.data.groups });
+    dispatch({
+      type: GLOBALTYPES.ALERT,
+      payload: { loading: false },
+    });
   } catch (error) {
     dispatch({
       type: GLOBALTYPES.ALERT,

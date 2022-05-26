@@ -36,11 +36,11 @@ const FollowBtn = ({ user }) => {
   return (
     <>
       {followed ? (
-        <button className="btn btn-outline-danger" onClick={handleUnFollow}>
+        <button className="btn btn-outline" onClick={handleUnFollow}>
           Bỏ theo dõi <img src="" alt="" />
         </button>
       ) : (
-        <button className="btn btn-outline-info" onClick={handleFollow}>
+        <button className="btn btn-outline" onClick={handleFollow}>
           Theo dõi
         </button>
       )}

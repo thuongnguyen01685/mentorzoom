@@ -91,17 +91,11 @@ const Box = () => {
           onChange={(opt) => setArrayUser(opt)}
         />
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <button
-            onClick={handleSubmit}
-            type="button"
-            className="btn btn-primary mt-2">
+          <button onClick={handleSubmit} type="button" className="btn  mt-2">
             {statusZoom ? "Sửa thông tin" : "Thêm"}
           </button>
           {statusZoom && (
-            <button
-              onClick={handleCancel}
-              type="button"
-              className="btn btn-primary mt-2">
+            <button onClick={handleCancel} type="button" className="btn  mt-2">
               Đóng
             </button>
           )}

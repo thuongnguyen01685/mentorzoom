@@ -38,7 +38,6 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-
     proxy: {
       "/api": {
         target: "https://mentorzoom.thngnguyn44.repl.co",

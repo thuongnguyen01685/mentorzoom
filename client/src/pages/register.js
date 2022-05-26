@@ -199,7 +199,7 @@ font-weight-bold">
             </small>
           </div>
         </div>
-        <div className="row justify-content-between mx-0 mb-1">
+        {/* <div className="row justify-content-between mx-0 mb-1">
           <label
             htmlFor="male"
             className="text-light
@@ -240,7 +240,7 @@ font-weight-bold">
               onChange={handleChangeInput}
             />
           </label>
-        </div>
+        </div> */}
         <button
           type="submit"
           className="btn w-100 text-light font-weight-bold"

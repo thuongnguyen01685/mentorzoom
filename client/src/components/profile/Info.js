@@ -38,9 +38,9 @@ const Info = ({ id, auth, profile, dispatch }) => {
               <h2>{user.fullname}</h2>
               {user._id === auth.user._id ? (
                 <button
-                  className="btn btn-outline-warning"
+                  className="btn btn-outline"
                   onClick={() => setOnEdit(true)}>
-                  Chỉnh sửa trang cá nhân
+                  Chỉnh sửa
                 </button>
               ) : (
                 <FollowBtn user={user} />

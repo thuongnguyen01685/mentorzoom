@@ -86,7 +86,7 @@ const Groups = () => {
         <div className="card" style={{ width: "18rem" }} key={item._id}>
           <div className="color mt-0 p-3 bg-info text-center">
             {" "}
-            <text className="text-white ">{item.nameGroup}</text>
+            <p className="text-white ">{item.nameGroup}</p>
             <div className="nav-item dropdown">
               <span
                 className="material-icons text-light"
@@ -122,7 +122,7 @@ const Groups = () => {
             <Link to="/home">
               <button
                 type="button"
-                className="btn btn-primary mt-2"
+                className="btn  mt-2"
                 onClick={() => handleInZoom(item._id)}>
                 Vào nhóm
               </button>

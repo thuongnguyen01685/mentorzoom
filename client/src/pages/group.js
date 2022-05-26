@@ -10,11 +10,9 @@ const Group = () => {
   const dispatch = useDispatch();
   const { auth, groups } = useSelector((state) => state);
 
-  const token = localStorage.getItem("@token_key");
-
   useEffect(() => {
     if (auth.token) {
-      dispatch(getGroups({ token }));
+      dispatch(getGroups(auth.token));
     }
   }, [auth.token, dispatch, auth]);
   return (
