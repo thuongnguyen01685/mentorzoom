@@ -23,6 +23,7 @@ const Groups = () => {
   //     .filter((items) => items.user_zoom.filter((i) => i === auth.user.email))
   //     .map((item) => item)
   // );
+
   let temp = [];
   Groups.getGroup.map((i) => {
     if (i.ArrayUser.includes(auth.user.email) === true) {
