@@ -34,22 +34,22 @@ const NotifyModal = () => {
   return (
     <div style={{ minWidth: "320px" }}>
       <div className="d-flex justify-content-between align-items-center px-3">
-        <h4>Thông báo</h4>
+        <h4 className="text-light">Thông báo</h4>
         {notify.sound ? (
           <i
-            className="fas fa-bell text-danger"
+            className="fas fa-bell text-warning"
             style={{ fontSize: "1.2rem", cursor: "pointer" }}
             onClick={handleSound}
           />
         ) : (
           <i
-            className="fas fa-bell-slash text-danger"
+            className="fas fa-bell-slash text-warning"
             style={{ fontSize: "1.2rem", cursor: "pointer" }}
             onClick={handleSound}
           />
         )}
       </div>
-      <hr className="mt-0" />
+      <hr className="mt-0 bg-light" />
 
       {notify.data.length === 0 && (
         <img src={NoNotice} alt="NoNotice" className="w-100" />
@@ -60,14 +60,16 @@ const NotifyModal = () => {
           <div key={index} className="px-2 mb-3">
             <Link
               to={`${msg.url}`}
-              className="d-flex text-dark align-items-center"
+              className="d-flex text-light align-items-center"
               onClick={() => handleIsRead(msg)}>
               <Avatar src={msg.user.avatar} size="big-avatar" />
 
               <div className="mx-1 flex-fill">
                 <div>
-                  <strong className="mr-1">{msg.user.username}</strong>
-                  <span>{msg.text}</span>
+                  <strong className="mr-1 text-light">
+                    {msg.user.username}
+                  </strong>
+                  <span className="text-light">{msg.text}</span>
                 </div>
                 {msg.content && <small>{msg.content.slice(0, 20)}...</small>}
               </div>
@@ -82,7 +84,7 @@ const NotifyModal = () => {
                 </div>
               )}
             </Link>
-            <small className="text-muted d-flex justify-content-between px-2">
+            <small className="text-light d-flex justify-content-between px-2">
               {moment(msg.createdAt).fromNow()}
               {!msg.isRead && <i className="fas fa-circle text-primary" />}
             </small>
@@ -90,9 +92,9 @@ const NotifyModal = () => {
         ))}
       </div>
 
-      <hr className="my-1" />
+      <hr className="my-1 bg-light" />
       <div
-        className="text-right text-danger mr-2"
+        className="text-right text-warning mr-2"
         style={{ cursor: "pointer" }}
         onClick={handleDeleteAll}>
         Xóa tất cả thông báo
