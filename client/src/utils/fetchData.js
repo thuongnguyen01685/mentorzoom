@@ -1,6 +1,6 @@
 import axios from "axios";
 export const URL = `https://api.fostech.vn`;
-export const ARL = `https://mentorzoom.thngnguyn44.repl.co`;
+export const ARL = `https://mentorzoom.herokuapp.com/`;
 
 export const getDataAPI = async (url, token) => {
   const res = await axios.get(`/api/${url}`, {
