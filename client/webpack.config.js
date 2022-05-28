@@ -33,7 +33,8 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       "/api": {
-        target: "https://mentorzoom.thngnguyn44.repl.co",
+        // target: "https://mentorzoom.herokuapp.com",
+        target: "http://localhost:5000",
         secure: false,
         changeOrigin: true,
       },

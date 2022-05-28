@@ -1,9 +1,11 @@
+import axios from "axios";
 import getLogin, {
   getDataAPI,
   getDataFostech,
   getInfo,
   postDataAPI,
 } from "../../utils/fetchData";
+
 import valid from "../../utils/valid";
 import { GLOBALTYPES } from "./globalTypes";
 // import { Buffer } from "buffer";
@@ -119,12 +121,13 @@ export const refreshToken = () => async (dispatch) => {
 
       dispatch({ type: GLOBALTYPES.ALERT, payload: {} });
     } catch (err) {
-      dispatch({
-        type: GLOBALTYPES.ALERT,
-        payload: {
-          error: err.response.data.msg,
-        },
-      });
+      // dispatch({
+      //   type: GLOBALTYPES.ALERT,
+      //   payload: {
+      //     error: err.response.data.msg,
+      //   },
+      // });
+      console.log(err);
     }
   }
 };

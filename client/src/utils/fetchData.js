@@ -1,9 +1,9 @@
 import axios from "axios";
 export const URL = `https://api.fostech.vn`;
-export const ARL = `https://mentorzoom.herokuapp.com/`;
+export const ARL = `https://mentorzoom.herokuapp.com`;
 
 export const getDataAPI = async (url, token) => {
-  const res = await axios.get(`/api/${url}`, {
+  const res = await axios.get(`${ARL}/api/${url}`, {
     headers: { Authorization: token },
   });
   return res;
@@ -34,28 +34,28 @@ export const getData = async () => {
   return res;
 };
 
-export const postDataAPI = async (url, post, token) => {
-  const res = await axios.post(`/api/${url}`, post, {
+export const postDataAPI = (url, post, token) => {
+  return axios.post(`${ARL}/api/${url}`, post, {
     headers: { Authorization: token },
+    withCredentials: true,
   });
-  return res;
 };
 
 export const putDataAPI = async (url, post, token) => {
-  const res = await axios.put(`/api/${url}`, post, {
+  const res = await axios.put(`${ARL}/api/${url}`, post, {
     headers: { Authorization: token },
   });
   return res;
 };
 
 export const patchDataAPI = async (url, post, token) => {
-  const res = await axios.patch(`/api/${url}`, post, {
+  const res = await axios.patch(`${ARL}/api/${url}`, post, {
     headers: { Authorization: token },
   });
   return res;
 };
 export const deleteDataAPI = async (url, token) => {
-  const res = await axios.delete(`/api/${url}`, {
+  const res = await axios.delete(`${ARL}/api/${url}`, {
     headers: { Authorization: token },
   });
   return res;
