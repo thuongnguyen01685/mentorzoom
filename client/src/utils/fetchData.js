@@ -1,6 +1,7 @@
 import axios from "axios";
 export const URL = `https://api.fostech.vn`;
-export const ARL = `https://mentorzoom.herokuapp.com`;
+// export const ARL = `https://mentorzoom.herokuapp.com`;
+export const ARL = `http://localhost:5000`;
 
 export const getDataAPI = async (url, token) => {
   const res = await axios.get(`${ARL}/api/${url}`, {
@@ -8,24 +9,6 @@ export const getDataAPI = async (url, token) => {
   });
   return res;
 };
-
-export default function getLogin(endpoint, method = "GET", data, headers) {
-  return axios({
-    method,
-    url: `${URL}/${endpoint}`,
-    data,
-    headers,
-  }).catch((error) => {
-    if (error.response) {
-      return error.response.data;
-    } else if (error.request) {
-      console.log(error.request);
-    } else {
-      console.log(error.message);
-    }
-    console.log(error.config);
-  });
-}
 
 export const getData = async () => {
   const res = await axios.get(

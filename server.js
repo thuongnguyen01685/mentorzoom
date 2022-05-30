@@ -20,7 +20,12 @@ const path = require("path");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    credentials: true, //cho phép gửi cookie
+    origin: [`http://localhost:8080`], //nhận cookie
+  })
+);
 app.use(cookieParser());
 
 //Socket

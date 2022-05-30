@@ -27,9 +27,7 @@ const ctrlGroup = {
   },
   getGroup: async (req, res) => {
     try {
-      const groups = await Groups.find({
-        user: [req.user._id],
-      }).sort("-createdAt");
+      const groups = await Groups.find().sort("-createdAt");
 
       res.json({
         msg: "Success!",

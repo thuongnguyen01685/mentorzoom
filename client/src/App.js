@@ -22,11 +22,13 @@ import CallModal from "./components/message/CallModal";
 import Peer from "peerjs";
 import Group from "./pages/group";
 import { getGroups } from "./redux/actions/groupAction";
+import axios from "axios";
 
 function App() {
   const { auth, status, modal, call, authFotech } = useSelector(
     (state) => state
   );
+  axios.defaults.withCredentials = true;
 
   const dispatch = useDispatch();
   useEffect(() => {

@@ -35,11 +35,6 @@ const authCtrl = {
         password: passwordHash,
         gender,
       });
-      // const newUser = new Users({
-      //   fullname,
-      //   email,
-      //   password: passwordHash,
-      // });
 
       const access_token = createAccessToken({ id: newUser._id });
       const refresh_token = createRefreshToken({ id: newUser._id });
@@ -111,6 +106,7 @@ const authCtrl = {
   generateAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
+      console.log(rf_token);
       if (!rf_token) return res.status(400).json({ msg: "Đăng nhập ngay." });
       jwt.verify(
         rf_token,
